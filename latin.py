@@ -3,15 +3,18 @@ class latin:
         print("Welcome to Simple Pig Latin Converter")
 
     def convert(self,letter):
+        letter = letter.lstrip()
         try:
             if len(letter) == 0:
-                latin_name = 'empty word is not allowed'
+                latin_name = 'empty word not allowed'
                 # change to lowercase
-            elif len(letter) > 0:
+            elif len(letter) == 1:
+                latin_name = "letter not allowed"
+            else:
                 original = letter.lower()
                 # the first character
                 k=0
-                first_char= original[k]
+                first_char = original[k]
     # check the char
                 converted_original = list(original)
                 length = len(converted_original) - 1
@@ -33,7 +36,7 @@ class latin:
                     latin_name = ''.join(new_name) + 'ay'
             return latin_name
         except:
-            return "word contain only consonants"
+            return letter + " word cannot be changed"
 
 
 

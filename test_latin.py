@@ -1,20 +1,23 @@
 import  unittest
-from Andela1 import latin
+from latin import latin
 
 
 class TestLatin(unittest.TestCase):
     def test_convert(self):
-        self.assertEqual(latin.convert(self, 'dog'), 'ogday')
-        self.assertEqual(latin.convert(self, 'will'), 'illway')
-        self.assertEqual(latin.convert(self, 'category'), 'ategorycay')
-        self.assertEqual(latin.convert(self, 'chatter'), 'atterchay')
-        self.assertEqual(latin.convert(self, 'trash'), 'ashtray')
-        self.assertEqual(latin.convert(self, 'andela'), 'andelaway')
-        self.assertEqual(latin.convert(self, 'electritian'), 'electritianway')
-        self.assertEqual(latin.convert(self, 'esther'), 'estherway')
-        self.assertEqual(latin.convert(self, 'K454dfdf'), 'word is invalid  contains numeric value')
-        self.assertEqual(latin.convert(self, ''), 'empty word is not allowed')
-        self.assertEqual(latin.convert(self, 'jdjfdf'), 'word contain only consonants')
+        letter = latin()
+        self.assertEqual(letter.convert('dog'), 'ogday')
+        self.assertEqual(letter.convert('will'), 'illway')
+        self.assertEqual(letter.convert('category'), 'ategorycay')
+        self.assertEqual(letter.convert('chatter'), 'atterchay')
+        self.assertEqual(letter.convert('trash'), 'ashtray')
+        self.assertEqual(letter.convert('andela'), 'andelaway')
+        self.assertEqual(letter.convert('electritian'), 'electritianway')
+        self.assertEqual(letter.convert('esther'), 'estherway')
+        self.assertEqual(letter.convert('K454dfdf'), 'word is invalid  contains numeric value')
+        self.assertEqual(letter.convert(''), 'empty word not allowed')
+        self.assertEqual(letter.convert('a'), 'letter not allowed')
+        self.assertEqual(letter.convert('z'), 'letter not allowed')
+        self.assertEqual(letter.convert('jdjfdf'), 'jdjfdf word cannot be changed')
 
 
 
